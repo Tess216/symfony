@@ -1,0 +1,21 @@
+<table border="1">
+<tr>
+    <th>ID</th>
+    <th>Username</th>
+    <th>Email</th> 
+    <th>Action</th>
+</tr>
+
+{% for author in authors %}
+<tr>
+    <td>{{ author.id }}</td>
+    <td>{{ author.username }}</td>
+    <td>{{ author.email }}</td> 
+    <td>
+        <form action="{{ path('deleteAuthor', {'id': author.id}) }}" method="post">
+            <button type="submit">Delete</button>
+        </form>
+    </td>
+</tr>
+{% endfor %}
+</table>

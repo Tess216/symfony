@@ -1,0 +1,29 @@
+{{form_start(FormA)}}
+<Table>
+<tr>
+<td>{{ form_label(FormA.ref) }}</td>
+<td>{{ form_widget(FormA.ref) }}</td>
+</tr>
+
+<tr>
+<td>{{ form_label(FormA.title) }}</td>
+<td>{{ form_widget(FormA.title) }}</td>
+</tr>
+<tr>
+<td>{{ form_label(FormA.publicationdate) }}</td>
+<td>{{ form_widget(FormA.publicationdate) }}</td>
+</tr>
+<tr>
+<td>{{ form_label(FormA.published) }}</td>
+<td>{{ form_widget(FormA.published) }}</td>
+</tr>
+<tr>
+<td>{{ form_label(FormA.author) }}</td>
+<td>{{ form_widget(FormA.author) }}</td>
+</tr>
+<tr>
+<td>{{ form_label(FormA.category) }}</td>
+<td>{{ form_widget(FormA.category) }}</td>
+</tr>
+</table>
+{{form_end(FormA)}}

@@ -1,0 +1,15 @@
+
+
+{% block body %}
+    <h1>BOOK</h1>
+    <ul>
+        <li>Référence : {{ book.ref }}</li>
+        <li>Titre : {{ book.title }}</li>
+        <li>Catégorie : {{ book.category }}</li>
+        <li>Date de Publication : {{ book.publicationdate ? book.publicationdate|date('Y-m-d') : 'N/A' }}</li>
+        <li>Statut de Publication : {{ book.published ? 'Publié' : 'Non publié' }}</li>
+        <li>Auteur : {{ book.author ? book.author.username : 'Inconnu' }}</li>
+    </ul>
+    <a href="{{ path('listbook') }}" class="btn btn-primary">Retour</a>
+</body>
+{% endblock %}

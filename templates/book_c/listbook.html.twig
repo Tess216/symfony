@@ -1,0 +1,38 @@
+
+
+{% block body %}
+    <h1>Liste des Livres</h1>
+    <table class="table" border='1'>
+        <thead>
+            <tr>
+                <th>Référence</th>
+                <th>Titre</th>
+                <th>Catégorie</th>
+                <th>Date de Publication</th>
+                <th>Publié</th>
+                <th>Auteur</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.ref }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.category }}</td>
+                    <td>{{ book.publicationdate ? book.publicationdate|date('d/m/Y') : 'N/A' }}</td>
+                    <td>{{ book.published ? 'Oui' : 'Non' }}</td>
+                    <td>{{ book.author.username}}</td>
+                    <td> <a href="{{path('updatebook',{'ref':book.ref})}}">Edit</a>
+                        <a href="{{path('deletebook',{'ref':book.ref})}}">Delete</a>
+                         <a href="{{path('showbook',{'ref':book.ref})}}">Show</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3>Le nombre des livres publiés est : {{numpublished}}</h3>
+    <h3>Le nombre des livres non publiés est : {{num_unpublished}}</h3>
+    <button> <a href ={{path('addbook')}}>Create New</a></button>
+</body>
+{% endblock %}
